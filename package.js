@@ -11,15 +11,18 @@ Package.describe({
 });
 
 Npm.depends({
-  googleapis: '2.1.6'
+  googleapis: '2.1.7',
+  moment: '2.12.0'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3-beta.11');
-  api.use('ecmascript@0.4.0-beta.11');
-  api.use('service-configuration@1.0.6-beta.11');
+  api.versionsFrom('1.2.1');
+  api.use('ecmascript');
+  api.use('service-configuration');
 
-  api.mainModule('server/OAuth2Client.js', 'server');
+  api.addFiles(['server/OAuth2Client.js'], 'server');
+  api.export('OAuth2Client');
+  //api.mainModule('server/OAuth2Client.js', 'server');
 });
 
 Package.onTest(function(api) {

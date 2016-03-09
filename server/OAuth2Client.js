@@ -1,7 +1,6 @@
-import moment from 'moment';
-
 // import fails for 'googleapis' (https://github.com/meteor/meteor/issues/6438)
 const GoogleAPIs = Npm.require('googleapis');
+const moment = Npm.require('moment');
 
 const OAuth2 = GoogleAPIs.auth.OAuth2;
 let authConfig;
@@ -9,7 +8,7 @@ let authConfig;
 /**
  * Class representing the OAuth2Client
  */
-class OAuth2Client {
+OAuth2Client = class {
 
   /**
    *
@@ -76,6 +75,4 @@ class OAuth2Client {
 
     return this.user;
   }
-}
-
-export default OAuth2Client;
+};
