@@ -1,12 +1,8 @@
 Package.describe({
   name: 'webysr:googleapis-oauth2-client',
   version: '1.0.0',
-  // Brief, one-line summary of the package.
   summary: 'Provides an auto generated OAuth2 client to authorize calls to Google APIs',
-  // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/webysr/meteor-googleapis-oauth2-client.git',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
 });
 
@@ -22,7 +18,6 @@ Package.onUse(function(api) {
 
   api.addFiles(['server/OAuth2Client.js'], 'server');
   api.export('OAuth2Client');
-  //api.mainModule('server/OAuth2Client.js', 'server');
 });
 
 Package.onTest(function(api) {
