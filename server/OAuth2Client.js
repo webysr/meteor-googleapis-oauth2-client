@@ -49,9 +49,8 @@ OAuth2Client = class {
     // access token should be valid at least one minute
     if (moment().add(1, 'm').isAfter(moment(parseInt(this.user.services.google.expiresAt)))) {
 
-      console.log('Access Token valid less than one minute... go refresh it!');
+      console.log('Access Token expires in less than one minute... go refresh it!');
       var tokens = this.refreshAccessTokenSync();
-      console.log(tokens);
       Meteor.users.update({_id: this.user._id},
         {
           $set: {
